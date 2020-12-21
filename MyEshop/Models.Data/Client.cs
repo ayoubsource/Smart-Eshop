@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace MyEshop.Models.Data
+namespace MyEshop.Models
 {
     public class Client
     {
-        
+        [Key]
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public String FirstName { get; set; }
+        public String LasttName { get; set; }
         public DateTime BirthDay { get; set; }
         public Account Account { get; set; }
-        
     }
-
-
 }
