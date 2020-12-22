@@ -28,7 +28,7 @@ namespace MyEshop
             var DbConnection = Configuration["DbConnection"];
             //ajouter un service 
             //avec lifetime scoped a chaque fois il ya une demande  une nouvelle creation d'instance
-            services.AddDbContext<DBContext>(opts => opts.UseMySQL(DbConnection));
+            services.AddDbContext<DBContext>(opts => opts.UseMySQL(DbConnection),ServiceLifetime.Scoped);
 
             services.AddControllersWithViews();
         }
