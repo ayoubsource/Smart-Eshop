@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyEshop.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +24,12 @@ namespace MyEshop
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            //extraire la DbConnection du Json
+            var DbConnection = Configuration["DbConnection"];
+            //ajouter un service 
+            //avec lifetime scoped a chaque fois il ya une demande  une nouvelle creation d'instance
+            services.AddDbContext<DBContext>(opts => opts.UseMySQL(DbConnection));
+
             services.AddControllersWithViews();
         }
 
