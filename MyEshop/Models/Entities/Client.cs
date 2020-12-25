@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyEshop.Models.Data
+namespace MyEshop.Models.Entities
 {
     public class Client
     {
@@ -11,5 +11,12 @@ namespace MyEshop.Models.Data
         public string LasttName { get; set; }
         public DateTime BirthDay { get; set; }
         public Account Account { get; set; }
+
+        public Client(string firstName, string lasttName, DateTime birthDay)
+        {
+            FirstName = firstName;
+            LasttName = lasttName;
+            BirthDay = birthDay;
+        }
     }
 }

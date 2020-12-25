@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MyEshop.Models.Data;
+using MyEshop.Models.DAO;
 
 namespace MyEshop
 {
@@ -25,11 +25,13 @@ namespace MyEshop
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IClientRepository, ClientManager>();
+
             //extraire la DbConnection du Json
             var DbConnection = Configuration["DbConnection"];
             //ajouter un service 
             //avec lifetime scoped a chaque fois il ya une demande  une nouvelle creation d'instance
-            services.AddDbContext<SmartEshopDbContext>(opts => opts.UseMySQL(DbConnection),ServiceLifetime.Scoped);
+            services.AddDbContext<SmartEshopDbContext>(opts => opts.UseMySQL(DbConnection));
 
             services.AddControllersWithViews();
         }

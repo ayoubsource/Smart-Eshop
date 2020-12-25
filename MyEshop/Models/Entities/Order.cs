@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyEshop.Models.Data
+namespace MyEshop.Models.Entities
 {
     public class Order
     {

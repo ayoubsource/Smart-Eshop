@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MyEshop.Models.Data
+namespace MyEshop.Models.Entities
 {
     public class Account
     {
@@ -11,6 +11,10 @@ namespace MyEshop.Models.Data
         [Required]
         public string Password { get; set; }
 
-
+        public Account(string email, string password)
+        {
+            Email = email;
+            Password = password;
+        }
     }
 }

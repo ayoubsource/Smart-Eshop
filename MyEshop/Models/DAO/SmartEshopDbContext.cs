@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyEshop.Models.Entities;
 
-namespace MyEshop.Models.Data
+namespace MyEshop.Models.DAO
 {
-    class SmartEshopDbContext:DbContext
+    public class SmartEshopDbContext:DbContext
     {
         public SmartEshopDbContext(DbContextOptions<SmartEshopDbContext> options)
            : base(options)
@@ -15,5 +16,9 @@ namespace MyEshop.Models.Data
         public DbSet<Client> Client { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<Product> Product { get; set; }
+        
+        
+        
+        
     }
 }

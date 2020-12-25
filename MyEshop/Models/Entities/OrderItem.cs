@@ -1,4 +1,4 @@
-﻿namespace MyEshop.Models.Data
+﻿namespace MyEshop.Models.Entities
 {
     public class OrderItem
     {

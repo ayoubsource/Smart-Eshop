@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyEshop.Models;
-using MyEshop.Models.Data;
+using MyEshop.Models.DAO;
 
 namespace MyEshop.Migrations
 {
