@@ -26,17 +26,13 @@ namespace MyEshop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IClientRepository, ClientManager>();
-
-            //extraire la DbConnection du Json
-            var DbConnection = Configuration["DbConnection"];
-            //ajouter un service 
-            //avec lifetime scoped a chaque fois il ya une demande  une nouvelle creation d'instance
-            services.AddDbContext<SmartEshopDbContext>(opts => opts.UseMySQL(DbConnection));
-
+            services.AddTransient<IProductRepository, ProductManager>();
+            
+            var dbConnection = Configuration["DbConnection"];
+            services.AddDbContext<SmartEshopDbContext>(opts => opts.UseMySQL(dbConnection));
             services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

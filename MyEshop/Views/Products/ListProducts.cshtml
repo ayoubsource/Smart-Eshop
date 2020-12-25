@@ -1,0 +1,31 @@
+﻿@using MyEshop.Models.Entities
+@model IEnumerable<MyEshop.Models.Entities.Product>;
+
+@{
+    ViewData["Title"] = "List Product";
+}
+
+<h2>Here is the list of Products</h2>
+<table style="width:50%">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>ShortDescription</th>
+        <th>UnitPrice</th>
+        <th>AvailableQuantity</th>
+        <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (Product product in Model)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.ShortDescription</td>
+            <td>@product.UnitPrice</td>
+            <td>@product.AvailableQuantity</td>
+            <td>@product.Category</td>
+        </tr>
+    }
+    </tbody>
+</table>

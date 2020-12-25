@@ -13,9 +13,11 @@
 
         public double UnitPrice { get; set; }
         public int AvailableQuantity { get; set; }
+        public int CategoryId { get; set; }
+
         public Category Category { get; set; }
 
-        public Product(int id, string urlImgProd, string name, string shortDescription, string longDescription, double unitPrice, int availableQuantity)
+        public Product(int id, string urlImgProd, string name, string shortDescription, string longDescription, double unitPrice, int availableQuantity, int categorId)
         {
             Id = id;
             UrlImgProd = urlImgProd;
@@ -24,6 +26,7 @@
             LongDescription = longDescription;
             UnitPrice = unitPrice;
             AvailableQuantity = availableQuantity;
+            CategoryId = categorId;
         }
 
 

@@ -12,10 +12,10 @@ namespace MyEshop.Controllers
 {
     public class RegistrationController : Controller
     {
-        private readonly IClientRepository ClientManager;
+        private readonly IClientRepository _clientManager;
         public RegistrationController(IClientRepository clientManager)
         {
-            ClientManager = clientManager;
+            _clientManager = clientManager;
         }
         
         [HttpGet]
@@ -33,7 +33,7 @@ namespace MyEshop.Controllers
             var hashedPwd = passwordHasher.HashPassword(client, pwd);
             var isValid = passwordHasher.VerifyHashedPassword(client, hashedPwd, "123456789");
             client.Account = new Account(email, hashedPwd);
-            ClientManager.Add(client);
+            _clientManager.Register(client);
             return Redirect("/Login/Login");
 
 
