@@ -4,10 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyEshop.Models;
+using MyEshop.Models.Data;
 
 namespace MyEshop.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(SmartEshopDbContext))]
     partial class DBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -115,7 +116,7 @@ namespace MyEshop.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Price")
+                    b.Property<int>("UnitPrice")
                         .HasColumnType("int");
 
                     b.Property<string>("ShortDescription")

@@ -5,10 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyEshop.Models;
+using MyEshop.Models.Data;
 
 namespace MyEshop.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(SmartEshopDbContext))]
     [Migration("20201222134433_InitialMigration")]
     partial class InitialMigration
     {
@@ -117,7 +118,7 @@ namespace MyEshop.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Price")
+                    b.Property<int>("UnitPrice")
                         .HasColumnType("int");
 
                     b.Property<string>("ShortDescription")

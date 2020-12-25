@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
-namespace MyEshop.Models
+namespace MyEshop.Models.Data
 {
     public class Client
     {
         [Key]
         public int Id { get; set; }
-        public String FirstName { get; set; }
-        public String LasttName { get; set; }
+        public string FirstName { get; set; }
+        public string LasttName { get; set; }
         public DateTime BirthDay { get; set; }
         public Account Account { get; set; }
     }

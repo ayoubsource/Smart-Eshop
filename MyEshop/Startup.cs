@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MyEshop.Models.Data;
 
 namespace MyEshop
 {
@@ -28,7 +29,7 @@ namespace MyEshop
             var DbConnection = Configuration["DbConnection"];
             //ajouter un service 
             //avec lifetime scoped a chaque fois il ya une demande  une nouvelle creation d'instance
-            services.AddDbContext<DBContext>(opts => opts.UseMySQL(DbConnection),ServiceLifetime.Scoped);
+            services.AddDbContext<SmartEshopDbContext>(opts => opts.UseMySQL(DbConnection),ServiceLifetime.Scoped);
 
             services.AddControllersWithViews();
         }

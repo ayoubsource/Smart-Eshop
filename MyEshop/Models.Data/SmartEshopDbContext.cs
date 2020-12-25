@@ -1,13 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace MyEshop.Models
+namespace MyEshop.Models.Data
 {
-    class DBContext:DbContext
+    class SmartEshopDbContext:DbContext
     {
-        public DBContext(DbContextOptions<DBContext> options)
+        public SmartEshopDbContext(DbContextOptions<SmartEshopDbContext> options)
            : base(options)
         {
 

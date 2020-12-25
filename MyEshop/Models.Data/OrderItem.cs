@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace MyEshop.Models
+﻿namespace MyEshop.Models.Data
 {
     public class OrderItem
     {
-        [Key]
         public int Id { get; set; }
-        public int amount { get; set; }
+        public int Quantity { get; set; }
+        public Product Product { get; set; }
     }
 }
