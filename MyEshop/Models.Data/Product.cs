@@ -25,6 +25,7 @@ namespace MyEshop.Models
 
         public int Price { get; set; }
 
+        private Category _categorie;
 
 
 
@@ -38,8 +39,21 @@ namespace MyEshop.Models
             Price = price;
 
         }
+        public Product()
+        {
 
-   
+        }
+        public void GetAllProducts(List<Product> _listProducts)
+        {
+            foreach (var p in _listProducts)
+            {
+                Console.WriteLine(p.UrlImgProd);
+                Console.WriteLine(p.Name);
+                Console.WriteLine(p.ShortDescription);
+                Console.WriteLine(p.LongDescription);
+                Console.WriteLine(p.Price);
+            }
+        }
 
        
     }
